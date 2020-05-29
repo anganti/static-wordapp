@@ -23,7 +23,7 @@ jobs:
     - name: Convert Docx to HTML
       run: dotnet DocxToHtml/static-wordapp.dll
     - name: Upload output
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: output
         path: DocxToHtml/output
