@@ -22,6 +22,11 @@ jobs:
         dotnet-version: 3.1.100
     - name: Convert Docx to HTML
       run: dotnet DocxToHtml/static-wordapp.dll
+    - name: Upload output
+    - uses: actions/upload-artifact@v2
+      with:
+        name: output
+        path: DocxToHtml/output
   
   deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
